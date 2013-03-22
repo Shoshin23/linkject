@@ -51,10 +51,17 @@ makeRegex = ( keyword, options ) ->
 			_.each regexMap, (regex,keyword) ->
 				while regex.test(text) and (countMap[keyword] < options.repeat or options.repeat is 0)
 					text = text.replace regex, "<a href='#{map[keyword]}' title='#{keyword}'>$1</a>"
+					countMap[keyword]++
+					break if options.repeat is 0
+					countMap[keyword] = 0
+					return text
+				descend $('.linkjet-tag-class')
+				$('.linkjet-tag-class').html()
 
 
 		
-		#export parse function 
+		module.exports = {parse: parse}
+
 		
 		#GLORY
 
