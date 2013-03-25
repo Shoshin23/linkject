@@ -1,0 +1,27 @@
+{
+"name" : "linkjet",
+"description" : "Parse text for keywords and replace with links during documentation",
+"version" : "0.1.0",
+"main" : "linkjet.js",
+"dependencies" : {
+  "cheerio" : ">=0.10.1",
+  "underscore" : ">=0.0.0"
+},
+"repository" : {
+   "type" : "git",
+   "url" : "www.github.com/shoshin23/linkjet"
+},
+"keywords" : [
+"parse",
+"link",
+"documentation",
+"text"
+],
+"author" : {
+  "name" : "Karthik Kannan",
+  "url" : "www.github.com/shoshin23"
+},
+"license" : "MIT",
+"engines" : ["node >=0.6.12"]
+}
+
