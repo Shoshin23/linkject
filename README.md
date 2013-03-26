@@ -9,3 +9,12 @@ Its pretty useful when you're writing documentation and need to inject anchor li
 * Can match full words but wont really overstep the line with matching. 
 
 ### Methods
+Use the `parse(text,map,options)` to parse `text` (which can be both plain text and HTML), using `map`'s keys to create an 
+anchor link in `text`. 
+`options` argument can be set to `caseSensitve` which tells the `parse` method whether the matching text should be case 
+sensitive or not. `options` defaults to `true`.
+
+### Usage
+
+
+
