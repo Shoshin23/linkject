@@ -41,7 +41,7 @@ makeRegex = ( keyword, options ) ->
 			$children.each () ->
 				desecend $(@)
 		
-		#a function to Parse text nodes
+		
 		$el[0].children.forEach(node) ->
 			if node.type is 'text'
 				node.data = replace node.data
@@ -59,7 +59,7 @@ makeRegex = ( keyword, options ) ->
 				$('.linkjet-tag-class').html()
 
 
-		
+		#export the one and only Parse function.
 		module.exports = {parse: parse}
 
 		
