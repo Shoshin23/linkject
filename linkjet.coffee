@@ -24,7 +24,7 @@ makeRegex = ( keyword, options ) ->
 
 		#wrapping text in div incase the text doesnt contain any markup
 
-		$ = cheerio.load "<div class='linkjet-tag-class'>#{text}</div>"
+		$ = cheerio.load "<div class='linkject-tag-class'>#{text}</div>"
 
 		#create a regex map and use MakeRegex function on the keyword args
 		#with options.
@@ -37,14 +37,14 @@ makeRegex = ( keyword, options ) ->
 		#create function descend to check through the tags 
 		descend = ($el) ->
 			return if $el[0].type is 'tag' and $el[0].name is 'a'
-			$children = $el.children()
+			$children = $el.children() #gets the children of the element.
 			$children.each () ->
-				desecend $(@)
+				desecend $(@) 
 		
 		
 		$el[0].children.forEach(node) ->
 			if node.type is 'text'
-				node.data = replace node.data
+				node.data = replace node.data #replace function used to swap keyword with link
 
 		#a function to replace the text nodes
 		replace = (text) ->
@@ -55,8 +55,8 @@ makeRegex = ( keyword, options ) ->
 					break if options.repeat is 0
 					countMap[keyword] = 0
 					return text
-				descend $('.linkjet-tag-class')
-				$('.linkjet-tag-class').html()
+				descend $('.linkject-tag-class')
+				$('.linkject-tag-class').html()
 
 
 		#export the one and only Parse function.
