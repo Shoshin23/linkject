@@ -1,4 +1,4 @@
-#Cheerio module used to include parsing texts and injecting link nodes 
+#Cheerio module for implementing core jQuery on the server side.
 #
 cheerio = require 'cheerio'
 _= require 'underscore'
